@@ -22,7 +22,7 @@ npm install && echo "install complete."
 echo "Starting build..."
 rm -rf dist
 
-#npx prisma migrate dev
+npx prisma migrate dev
 #npx prisma db pull
 #npx prisma generate
 
