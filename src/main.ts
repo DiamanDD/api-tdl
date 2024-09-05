@@ -2,9 +2,20 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import * as basicAuth from 'express-basic-auth';
+
 
 async function bootstrap(port?: number) {
   const app = await NestFactory.create(AppModule);
+  app.use(
+    '/api*',
+    basicAuth({
+      challenge: true,
+      users: {
+        yourUserName: 'p4ssw0rd',
+      },
+    }),
+  );
   const config = new DocumentBuilder()
     .setTitle('Todolist API')
     .setDescription('The example API description')
