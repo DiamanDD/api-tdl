@@ -38,6 +38,7 @@ export class UsersController {
 
   @Post()
   @ApiOkResponse({ type: CreateUserReq })
+  @Roles(UserRole.Admin)
   create(@Body() data: CreateUserReq) {
     return this.usersService.create(data);
   }
