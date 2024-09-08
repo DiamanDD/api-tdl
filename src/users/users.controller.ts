@@ -32,7 +32,6 @@ export class UsersController {
   }
 
   @Get('me')
-  @Roles(UserRole.Admin)
   getProfile(@CurrentUser() req: UserResponse) {
     return req;
   }
