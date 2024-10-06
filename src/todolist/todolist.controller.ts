@@ -41,7 +41,7 @@ export class TodolistController {
     return this.todolistService.findOne(todolist_id, user_id);
   }
 
-  @Patch(':id')
+  @Patch(':todolist_id')
   @ApiOkResponse({ type: Todolist })
   update(
     @Param('todolist_id') todolist_id: string,
