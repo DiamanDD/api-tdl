@@ -25,11 +25,6 @@ export class TaskService {
         },
       },
     });
-    if (!tasks.length) {
-      throw new NotFoundException(
-        `Tasks with not found or you don't have access to it.`,
-      );
-    }
     return tasks;
   }
 
