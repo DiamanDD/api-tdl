@@ -1,9 +1,7 @@
 import { Task } from '../entities/task.entity';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateTaskDto
-  implements Omit<Task, 'created_at' | 'is_completed' | 'id'>
-{
+export class CreateTaskDto implements Omit<Task, 'created_at' | 'id'> {
   @ApiProperty()
   description: string;
   @ApiProperty()
@@ -12,4 +10,6 @@ export class CreateTaskDto
   title: string;
   @ApiProperty()
   due_date: Date;
+  @ApiProperty()
+  is_completed: boolean;
 }
